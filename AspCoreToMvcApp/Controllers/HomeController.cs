@@ -13,9 +13,14 @@ namespace AspCoreToMvcApp.Controllers
 
         [HttpPost]
         //public string Index(string name, int age)
-        public string Index(Employee employee)
+        public IActionResult Index(Employee employee)
         {
-            return $"Name: {employee.Name}, Age: {employee.Age}";
+            return new JsonResult(employee);
+
+            //return new ContentResult()
+            //{
+            //    Content = $"Name: {employee.Name}, Age: {employee.Age}"
+            //};
         }
 
         [HttpPost]
